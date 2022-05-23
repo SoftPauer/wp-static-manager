@@ -1,0 +1,197 @@
+.site-branding {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    margin-right: 0px;
+}
+
+.home #ta-pageload .container-pageload.show {
+    transition: 0.1s 0.1s !important;
+    /* overflow-x: hidden; */
+    contain: paint;
+}
+
+.wp-block-create-block-tickets-table .item {
+    background-color: #f5f7ff;
+}
+
+.wp-block-create-block-tickets-table .price-block {
+    background-color: white;
+}
+
+.wp-block-create-block-section-title {
+    background-color: white;
+}
+
+#post-3628 .mobileImgContainer {
+    margin-top: -22px;
+}
+
+.wp-block-create-block-section-title {
+    background-color: white;
+}
+
+#post-225 .wp-block-create-block-buy-tickets-block {
+    margin-bottom: 20px !important;
+}
+
+#post-225 .wp-block-create-block-buy-tickets-block .background-container {
+    margin-top: 0px;
+}
+
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* #post-785 .wp-block-the-experience-the-experience .section #bg-image {
+    height: 300px;
+} */
+#post-51 .background-container {
+    margin-top: 55px;
+}
+
+#post-51 .wp-block-create-block-buy-tickets-block {
+    margin-bottom: 134px !important;
+}
+
+#post-230 {
+    overflow: hidden;
+}
+
+#post-230 .wp-block-image {
+    margin-bottom: 34px !important;
+    margin-top: -130px !important;
+}
+
+#post-230 .background-container {
+    margin-bottom: 134px !important;
+    margin-top: 121px !important;
+}
+
+#post-230 .wp-block-create-block-button-block {
+    margin-top: -60px !important;
+}
+
+#post-785 .wp-block-create-block-prize-money {
+    background-color: #fff !important;
+}
+
+#post-785 .background-container {
+    margin-top: -10px !important;
+}
+
+#post-785 .wp-block-create-block-buy-tickets-block {
+    margin-bottom: 0px !important;
+}
+
+#post-785 .wp-block-create-block-tournament-schedule {
+    background-color: #fff !important;
+    padding-bottom: 0px !important;
+}
+
+#post-785 .wp-block-the-experience-the-experience .jcarousel-list {
+    margin-left: 5px;
+}
+
+#post-516 .wp-block-latest-posts li:first-child a {
+    font-size: 17px !important;
+}
+
+#post-488 .helpie-faq.accordions .accordion .accordion__item:before {
+    border-right: 18px solid #fff !important;
+}
+
+#quiz-iframe {
+    width: 340px !important;
+    height: 250px !important;
+}
+
+#post-3404 .promoheader {
+    display: none;
+}
+
+#post-1633 .more-button_M {
+    padding-bottom: 0px;
+}
+
+#post-1633 .wp-block-create-block-event-snippet-block .distanceToEfest {
+    letter-spacing: 0px !important;
+}
+
+#post-1633 .wp-block-create-block-custom-hotel-packages .root .title {
+    letter-spacing: 0px !important;
+    padding-top: 34px;
+}
+
+#post-1633 .wp-block-create-block-custom-hotel-packages .root .packages-container {
+    margin-top: -40px;
+}
+
+#post-1633 .wp-block-create-block-custom-hotel-packages .root .packages-container {
+    gap: 10px 50px;
+}
+
+#post-516 .wp-block-latest-posts__post-excerpt {
+    line-height: 27px;
+}
+
+#post-230 .wp-block-formula-e-drivers-block {
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+
+#post-230 .wp-block-create-block-celebrity-race {
+    background-color: white;
+}
+
+#post-230 .wp-block-create-block-celebrity-race .celebrity-race-container .photo-slide-side .slick-dots {
+    bottom: -30px !important;
+}
+
+#post-230 .wp-block-create-block-celebrity-race .celebrity-race-container .photo-slide-side .slick-prev.slick-arrow {
+    top: 712px !important;
+}
+
+#post-230 .wp-block-create-block-celebrity-race .celebrity-race-container .photo-slide-side .slick-next.slick-arrow {
+    top: 712px !important;
+}
+
+#popmake-3930 .wp-block-create-block-showheader .root .name-container .top-right-decor {
+    height: 43px;
+    right: -20px;
+}
+
+#popmake-3930 .wp-block-create-block-showheader .root .name-container:before {
+    border-right: 21px solid transparent;
+    border-top: 20px solid #0f1638;
+    right: -20px;
+}
+
+#popmake-3930 .wp-block-create-block-showheader .root .img-decor {
+    width: 89px;
+}
+
+#post-785 .wp-block-the-experience-the-experience .section .heading .section-title {
+    width: 260px;
+    left: 66px;
+    font-size: 17px !important;
+}
+
+#post-785 .wp-block-the-experience-the-experience .section .section-body {
+    padding-top: 5px;
+}
+
+#post-488 .wp-block-travel-info-travel-info .image-text {
+    width: 70px;
+}
+
+#post-3937 .wp-block-media-title-media-title .header-container .title-container {
+    width: 84% !important;
+}
+
+#post-3937 .wp-block-media-title-media-title .header-container .title-container .hero-title {
+    padding: 10px 31px 7px 9px !important;
+}
