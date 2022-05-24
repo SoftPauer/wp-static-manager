@@ -2,8 +2,6 @@
 
 namespace StaticManager;
 
-use Eher\OAuth\Util;
-
 class Utils
 {
 
@@ -213,12 +211,17 @@ class Utils
 
             // lets inject preload urls into image preloader script 
             // Utils::find_and_replace_content_in_file(STATIC_MANAGER_MOBILE_HTML . "/wp-content/plugins/static-manager" . "/image-preloader.js", "var preload_urls = [];", "var preload_urls = " . json_encode($preload_urls) . ";");
-            Utils::custom_logs("resource urls: " . json_encode($resUrls));
             $indexHtmlContent = Utils::replace_urls_with_abs_path($indexHtmlContent, $prefix);
             Utils::createFile($indexHtml, $indexHtmlContent);
             Utils::copy_file(STATIC_MANAGER_PLUGIN_DIR . "./sw.js", STATIC_MANAGER_MOBILE_HTML_TEMP);
             Utils::download_resources_from_pages($prefix);
-            Utils::custom_copy('/var/www/html/wp-content/reactpress/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress');
+
+            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress');
+
+            //Find all index.html files and add theme class to html tag
+            Utils::add_theme_class_to_html_files();
+
+
         } catch (\Throwable $th) {
             Utils::custom_logs("error: " . $th->getMessage());
             Utils::custom_logs("error line:" . $th->getLine());
@@ -234,6 +237,18 @@ class Utils
             rename($old_name, $new_name);
         }
     }
+
+    public static function  add_theme_class_to_html_files()
+    {
+        $reactpress_pages = [STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/profile/index.html'];
+        $site_name = get_bloginfo('name');
+        foreach ($reactpress_pages as $file) {
+            $content = file_get_contents($file);
+            $content = str_replace("<html", '<html class="'. $site_name. '"', $content);
+            file_put_contents($file, $content);
+        }
+    }
+
     public static function delete_folder($dir)
     {
         if (!file_exists($dir)) {

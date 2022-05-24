@@ -2,8 +2,6 @@
 
 namespace StaticManager;
 
-use Eher\OAuth\Util;
-
 class Database
 {
     protected $static_db_version, $sm_table_name;
