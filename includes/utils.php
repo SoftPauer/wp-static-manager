@@ -241,7 +241,7 @@ class Utils
     public static function  add_theme_class_to_html_files()
     {
         $reactpress_pages = [STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/profile/index.html'];
-        $site_name = get_bloginfo('name');
+        $site_name = str_replace(" ","_",get_bloginfo('name'));
         foreach ($reactpress_pages as $file) {
             $content = file_get_contents($file);
             $content = str_replace("<html", '<html class="'. $site_name. '"', $content);
