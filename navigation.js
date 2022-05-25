@@ -1,4 +1,4 @@
-const prefix = '/wp-content/plugins/static-manager/mobile-html'
+const prefix = '/wp-content/plugins/wp-static-manager/mobile-html'
 function isMobile() {
     return (
         window.flutter_inappwebview ||
