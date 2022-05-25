@@ -27,7 +27,7 @@ final class StaticManager
     add_action('admin_menu', '\StaticManager\StaticManager::static_setup_menu');
     wp_enqueue_script("jquery_private_event",  "/wp-content/plugins/wp-static-manager/jqueryEvent.js", array('jquery'), "1.0.0", false);
     wp_enqueue_script("mobile_navigation",  "/wp-content/plugins/wp-static-manager/navigation.js", array('jquery'), "1.0.0", false);
-    wp_enqueue_script("service_worker",  "/wp-content/plugins/wp-static-manager/serviceWorkerReg.js", array('jquery'), "0.0.1", false);
+    // wp_enqueue_script("service_worker",  "/wp-content/plugins/wp-static-manager/serviceWorkerReg.js", array('jquery'), "0.0.1", false);
     register_activation_hook(STATIC_MANAGER_PLUGIN_DIR . "includes/database.php", 'static_install');
   }
 
