@@ -155,7 +155,7 @@ class Utils
             $elm_type_attr = $doc->createAttribute('type');
             $elm_type_attr->value = 'text/javascript';
             $elm_src_attr = $doc->createAttribute('src');
-            $elm_src_attr->value = '/wp-content/plugins/static-manager/image-preloader.js';
+            $elm_src_attr->value = '/wp-content/plugins/wp-static-manager/image-preloader.js';
             $image_preloader_element->appendChild($elm_type_attr);
             $image_preloader_element->appendChild($elm_src_attr);
             $head = $doc->getElementsByTagName('head');
@@ -166,7 +166,7 @@ class Utils
             $elm_type_attr = $doc->createAttribute('type');
             $elm_type_attr->value = 'text/javascript';
             $elm_src_attr = $doc->createAttribute('src');
-            $elm_src_attr->value = '/wp-content/plugins/static-manager/site-url.js';
+            $elm_src_attr->value = '/wp-content/plugins/wp-static-manager/site-url.js';
             $site_url_element->appendChild($elm_type_attr);
             $site_url_element->appendChild($elm_src_attr);
             $head = $doc->getElementsByTagName('head');
@@ -183,7 +183,7 @@ class Utils
             $elm_type_attr = $doc->createAttribute('type');
             $elm_type_attr->value = 'text/javascript';
             $elm_src_attr = $doc->createAttribute('src');
-            $elm_src_attr->value = '/wp-content/plugins/static-manager/mobile_hide.js';
+            $elm_src_attr->value = '/wp-content/plugins/wp-static-manager/mobile_hide.js';
             $mobile_hide_element->appendChild($elm_type_attr);
             $mobile_hide_element->appendChild($elm_src_attr);
             $loader = $doc->getElementById('loader');

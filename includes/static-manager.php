@@ -25,9 +25,9 @@ final class StaticManager
     add_action('init', array($this, 'init'), 0);
    
     add_action('admin_menu', '\StaticManager\StaticManager::static_setup_menu');
-    wp_enqueue_script("jquery_private_event",  "/wp-content/plugins/static-manager/jqueryEvent.js", array('jquery'), "1.0.0", false);
-    wp_enqueue_script("mobile_navigation",  "/wp-content/plugins/static-manager/navigation.js", array('jquery'), "1.0.0", false);
-    wp_enqueue_script("service_worker",  "/wp-content/plugins/static-manager/serviceWorkerReg.js", array('jquery'), "0.0.1", false);
+    wp_enqueue_script("jquery_private_event",  "/wp-content/plugins/wp-static-manager/jqueryEvent.js", array('jquery'), "1.0.0", false);
+    wp_enqueue_script("mobile_navigation",  "/wp-content/plugins/wp-static-manager/navigation.js", array('jquery'), "1.0.0", false);
+    wp_enqueue_script("service_worker",  "/wp-content/plugins/wp-static-manager/serviceWorkerReg.js", array('jquery'), "0.0.1", false);
     register_activation_hook(STATIC_MANAGER_PLUGIN_DIR . "includes/database.php", 'static_install');
   }
 
@@ -79,7 +79,7 @@ final class StaticManager
         <input type="submit" name="Get zip"
                 value="Zip Contents" target="_blank"/>
     </form>
-    <a href="/wp-content/plugins/static-manager/wordpress.zip" download> Download zip</a>
+    <a href="/wp-content/plugins/wp-static-manager/wordpress.zip" download> Download zip</a>
     <form method="post" style="display: inline-grid;" >
     <input type="submit" name="Create index html mobile"
                 value="Generate Mobile Code"/>
@@ -112,7 +112,7 @@ final class StaticManager
       Utils::create_indexHtml();
     }
     if (isset($_POST['Create_index_html_test'])) {
-      Utils::create_indexHtml("/wp-content/plugins/static-manager/mobile-html");
+      Utils::create_indexHtml("/wp-content/plugins/wp-static-manager/mobile-html");
     }
   }
 }
