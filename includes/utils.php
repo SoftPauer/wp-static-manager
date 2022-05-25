@@ -213,7 +213,7 @@ class Utils
             // Utils::find_and_replace_content_in_file(STATIC_MANAGER_MOBILE_HTML . "/wp-content/plugins/static-manager" . "/image-preloader.js", "var preload_urls = [];", "var preload_urls = " . json_encode($preload_urls) . ";");
             $indexHtmlContent = Utils::replace_urls_with_abs_path($indexHtmlContent, $prefix);
             Utils::createFile($indexHtml, $indexHtmlContent);
-            Utils::copy_file(STATIC_MANAGER_PLUGIN_DIR . "./sw.js", STATIC_MANAGER_MOBILE_HTML_TEMP);
+            // Utils::copy_file(STATIC_MANAGER_PLUGIN_DIR . "./sw.js", STATIC_MANAGER_MOBILE_HTML_TEMP); // no need server worker for now
             Utils::download_resources_from_pages($prefix);
 
             Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress');
