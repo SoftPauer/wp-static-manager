@@ -127,10 +127,7 @@ class Utils
 
         try {
             $indexHtml = STATIC_MANAGER_MOBILE_HTML_TEMP . "/index.html";
-            Utils::custom_logs("site url " . get_site_url());
-            $internalUrl = get_site_url() === "http://localhost:8080" ? "http://127.0.0.1:80" : get_site_url();
-            Utils::custom_logs("html " .  $internalUrl );
-
+            $internalUrl ="http://127.0.0.1:80";
             $indexHtmlContent  = file_get_contents($internalUrl);
             Utils::custom_logs("html " .  $indexHtmlContent);
             $doc = new \DOMDocument();
