@@ -1,32 +1,36 @@
 <?php
 
-namespace StaticManager;
-
-class RestAPI
+if ( !class_exists( 'StaticManager_RestAPI' ) ) :
+class StaticManager_RestAPI
 {
     protected $_namespace = 'staticManager/v1';
 
     public function __construct()
     {
-        add_action('rest_api_init', [$this, 'register_rest_route']);
+        error_log("construrctor");
+        // do_action( 'rest_api_init', 'register_rest_route');
     }
     public function register_rest_route()
     {
+        error_log("rest init");
         register_rest_route($this->_namespace, '/data', array(
             array(
                 'methods'   => 'GET',
                 'callback' => [$this, 'custom_menu_endpoint'],
+                'permission_callback' => '__return_true'
             )
         ));
 
         register_rest_route($this->_namespace, '/updateneeded/(?P<version>\d+)', array(
             'methods' => 'GET',
             'callback' =>  [$this, 'is_update_needed'],
+            'permission_callback' => '__return_true'
         ));
 
         register_rest_route($this->_namespace, '/filemap', array(
             'methods' => 'GET',
             'callback' => [$this, 'get_file_map'],
+            'permission_callback' => '__return_true'
         ));
     }
 
@@ -82,7 +86,7 @@ class RestAPI
      */
     function get_file_map()
     {
-        return StaticManager::getInstance()->database()->get_file_map();
+        return  staticManager()->db->get_file_map();
     }
 
     public function get_pages($absolutePaths = false, $prefix = '')
@@ -127,3 +131,5 @@ class RestAPI
         return $posts;
     }
 }
+
+endif;

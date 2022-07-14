@@ -1,7 +1,6 @@
 <?php
 
-namespace StaticManager;
-
+if ( ! class_exists( 'Utils' ) ) :
 class Utils
 {
 
@@ -127,8 +126,11 @@ class Utils
 
         try {
             $indexHtml = STATIC_MANAGER_MOBILE_HTML_TEMP . "/index.html";
-            $internalUrl ="http://127.0.0.1:80";
-            $indexHtmlContent  = file_get_contents($internalUrl);
+            Utils::custom_logs("site url " . get_site_url());
+            $internalUrl =  get_site_url() === "http://localhost:8080" ? "http://127.0.0.1:80" : get_site_url();
+            Utils::custom_logs("html " .  $internalUrl );
+            
+            $indexHtmlContent  = file_get_contents($internalUrl, false);
             Utils::custom_logs("html " .  $indexHtmlContent);
             $doc = new \DOMDocument();
             $doc->loadHTML($indexHtmlContent);
@@ -328,7 +330,7 @@ class Utils
 
     public static function download_resources_from_pages($prefix)
     {
-        $pages = \StaticManager\StaticManager::getInstance()->rest()->get_pages();
+        $pages = staticManager()->rest->get_pages();
         $preload_urls = [];
         foreach ($pages->data as $key => $value) {
             Utils::custom_logs("page: " . $value->id);
@@ -354,7 +356,7 @@ class Utils
             }
         }
 
-        $posts = \StaticManager\StaticManager::getInstance()->rest()->get_posts();
+        $posts = staticManager()->rest->get_posts();
         foreach ($posts->data as $key => $value) {
             $content = $value["content"];
             $urls = Utils::find_all_urls_in_string($content);
@@ -629,3 +631,5 @@ class Utils
         return $content;
     }
 }
+
+endif;

@@ -1,8 +1,7 @@
 <?php
 
-namespace StaticManager;
-
-class Database
+if ( !class_exists( 'StaticManager_DB' ) ) :
+class StaticManager_DB
 {
     protected $static_db_version, $sm_table_name;
 
@@ -15,19 +14,19 @@ class Database
 
     public function static_install()
     {
+
         global $wpdb;
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
-
         $charset_collate = $wpdb->get_charset_collate();
-
+        Utils::custom_logs("static_install");
         $sql = "CREATE TABLE $this->sm_table_name (
 		id mediumint(9) NOT NULL AUTO_INCREMENT,
 		time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
 		filename text NOT NULL,
 		hash text NOT NULL,
-		PRIMARY KEY  (id)
-	) $charset_collate;";
+		PRIMARY KEY  (id)) $charset_collate;"; 
+
         dbDelta($sql);
         add_option('static_manager_db_version', $this->static_db_version);
         add_option('static_file_version', 0); // with every update this number is increased if client and server have the same version no updates needed 
@@ -62,3 +61,5 @@ class Database
 
     }
 }
+
+endif;
