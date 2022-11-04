@@ -4,7 +4,7 @@
  * Plugin Name: Static Manager
  * Plugin URI: 
  * Description: Provides a way to update mobile app
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Andrius Murauskas
  * Author URI: 
  * GitHub Plugin URI: https://github.com/SoftPauer/wp-static-manager
