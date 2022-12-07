@@ -294,7 +294,7 @@ class Utils
     $dir = opendir($src); 
    
     // Make the destination directory if not exist
-    @mkdir($dst); 
+    @mkdir($dst,0777,true); 
    
     // Loop through the files in source directory
     foreach (scandir($src) as $file) { 
