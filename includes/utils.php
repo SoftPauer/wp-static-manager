@@ -215,12 +215,8 @@ class Utils
             // Utils::copy_file(STATIC_MANAGER_PLUGIN_DIR . "./sw.js", STATIC_MANAGER_MOBILE_HTML_TEMP); // no need server worker for now
             Utils::download_resources_from_pages($prefix);
 
-            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/css/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/css');
-            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/dashboard/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/dashboard');
-            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/images/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/images');
-            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/Itinerary/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/Itinerary');
-            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/js/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/js');
-            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/profile/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/profile');
+            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/dashboard-v2/build/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/dashboard-v2/build');
+            Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/dashboard/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/dashboard'); //TODO:remove after a few days
             Utils::custom_copy('/var/www/html/wp-content/plugins/wp-reactpress/profile-v2/build/', STATIC_MANAGER_MOBILE_HTML_TEMP . '/wp-content/reactpress/profile-v2/build');
 
 
