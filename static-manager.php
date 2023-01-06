@@ -40,7 +40,7 @@ class StaticManager {
 
 	public function __construct() {
 
-
+		add_action('generate_app',array( $this, 'generate' ) );
 		register_activation_hook( __FILE__, array( $this, 'activation' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivation' ) );
 		add_action('rest_api_init', array($this,'rest_init'));
@@ -59,6 +59,15 @@ class StaticManager {
 		$this->includes();
 		$this->setup_hooks();
 
+	}
+	public function generate(){
+		update_option('SM_XPATHS_REMOVE', stripslashes($_POST['xpaths']));
+		error_log("create html");
+		Utils::create_indexHtml();
+		Utils::custom_logs("deleting: " . STATIC_MANAGER_MOBILE_HTML);
+		Utils::delete_folder(STATIC_MANAGER_MOBILE_HTML);
+		Utils::rename_dir(STATIC_MANAGER_MOBILE_HTML_TEMP, STATIC_MANAGER_MOBILE_HTML);
+		staticManager()->db->update_file_hash();
 	}
 
 	public function setup_constants() {
